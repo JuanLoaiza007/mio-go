@@ -1,36 +1,21 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Descripción
 
-## Getting Started
+Esta aplicación es un cliente NO oficial, gratuito y de código abierto diseñado proporcionar información y otras funcionalidades útiles relacionadas con el sistema integrado de transporte masivo MIO de Cali como consultar el saldo de la tarjeta de manera rápida y eficiente.
 
-First, run the development server:
+## Advertencia
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Esta aplicación NO ofrece ningún tipo de garantía sobre su funcionamiento o precisión.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esta aplicación NO almacena información del sistema MIO o sus usuarios, actúa únicamente como un cliente para consultar información disponible públicamente y accesible a través de Internet.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Las imágenes y otros contenidos relacionados con el sistema MIO pertenecen a sus respectivos autores y se utilizan con fines informativos.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Características Principales
 
-## Learn More
+- **Consulta de Saldo:** Permite a los usuarios verificar el saldo de sus tarjetas MIO de manera rápida.
 
-To learn more about Next.js, take a look at the following resources:
+Más funciones en desarrollo...
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Uso
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Para utilizar la aplicación, accede al despliegue en la siguiente dirección: [https://mio-go.vercel.app/](https://mio-go.vercel.app/)
