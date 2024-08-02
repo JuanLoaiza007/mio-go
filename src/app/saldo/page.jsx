@@ -34,7 +34,7 @@ export default function Home() {
   }, [cards]);
 
   return (
-    <div className="flex flex-1 flex-col sm:flex-row justify-center align-center">
+    <div className="flex flex-1 flex-col md:flex-row justify-center align-center">
       <BalanceCheck />
       <CardDeck cardsState={[cards, setCards]} />
     </div>

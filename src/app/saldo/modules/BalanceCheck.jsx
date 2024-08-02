@@ -23,7 +23,7 @@ export default function BalanceCheck() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center text-center px-4 py-8 md:px-10">
+    <div className="flex flex-col justify-center items-center text-center px-4 py-8 lg:px-8 xl:px-20">
       <h1 className="text-blue-ribbon-700 text-3xl font-bold m-6">
         Consulta de Saldo
       </h1>
