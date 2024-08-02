@@ -11,14 +11,13 @@
 @media (min-width: 720px) {
   .main-content {
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
   }
 }
 
 .div-balance-search {
   width: 40%;
+  margin: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
