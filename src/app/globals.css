@@ -14,6 +14,7 @@ body {
 }
 
 main {
+  width: 100%;
   padding: 1rem;
   margin: 1rem;
   display: flex;
@@ -30,6 +31,16 @@ main {
   main {
     justify-content: flex-start;
   }
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .color-primary {
