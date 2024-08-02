@@ -4,7 +4,7 @@ import Link from "next/link";
 import { NavbarState } from "@/states/NavbarState";
 import { capitalizeFirstLetter } from "@/utils/capitalization";
 
-export default function Sidebar() {
+export default function MainMenu() {
   const pages = [["saldo", "/saldo"]];
   const navbarState = NavbarState();
   const pathname = usePathname();
