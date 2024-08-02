@@ -5,7 +5,10 @@ import { NavbarState } from "@/states/NavbarState";
 import { capitalizeFirstLetter } from "@/utils/capitalization";
 
 export default function MainMenu() {
-  const pages = [["saldo", "/saldo"]];
+  const pages = [
+    ["saldo", "/saldo"],
+    ["Sobre la app", "/sobre"],
+  ];
   const navbarState = NavbarState();
   const pathname = usePathname();
 
