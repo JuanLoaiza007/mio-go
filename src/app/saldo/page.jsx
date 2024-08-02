@@ -1,5 +1,4 @@
 "use client";
-import "./page.css";
 import { useEffect, useState } from "react";
 import CardDeck from "@/app/saldo/modules/CardDeck";
 import BalanceCheck from "@/app/saldo/modules/BalanceCheck";
@@ -35,9 +34,9 @@ export default function Home() {
   }, [cards]);
 
   return (
-    <main className="main-content">
+    <div className="flex flex-1 flex-col sm:flex-row justify-center align-center">
       <BalanceCheck />
       <CardDeck cardsState={[cards, setCards]} />
-    </main>
+    </div>
   );
 }

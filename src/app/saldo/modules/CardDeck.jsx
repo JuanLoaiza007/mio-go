@@ -36,22 +36,26 @@ export default function CardDeck({ cardsState }) {
   };
 
   return (
-    <div className="div-cards">
-      <div className="flex-row justify-between align-center">
-        <h1 className="flex-col justify-center align-center color-primary">
-          Tarjetas
-        </h1>
-        <button className="btn btn-primary" onClick={handleAgregar}>
+    <div className="flex flex-1 flex-col bg-blue-ribbon-200 rounded-t-3xl md:rounded-t-none p-4">
+      <div className="flex flex-row px-4 py-8 justify-between items-center">
+        <h1 className="text-blue-ribbon-700 text-3xl font-bold">Tarjetas</h1>
+        <button
+          className="text-white bg-blue-ribbon-700 py-3 px-4 m-2 rounded-2xl font-bold"
+          onClick={handleAgregar}
+        >
           +
         </button>
       </div>
-      <div className="cards-container">
+      <div className="grid grid-rows-1 lg:grid-cols-2 xl:grid-cols-3">
         {cards.map((card) => (
           <Card key={parseCardNumber(card.number)} card={card} />
         ))}
       </div>
       {cards.length > 0 && (
-        <button className="btn btn-danger" onClick={handleClean}>
+        <button
+          className="text-white bg-red-600 py-3 px-4 m-2 rounded-2xl font-bold"
+          onClick={handleClean}
+        >
           Eliminar todas las tarjetas
         </button>
       )}

@@ -1,5 +1,4 @@
 "use client";
-import "./Card.css";
 import { useState } from "react";
 import { obtenerSaldo } from "@/services/api";
 import { parseCardNumber } from "@/utils/parserCardNumber";
@@ -20,13 +19,16 @@ export default function Card({ card }) {
   };
 
   return (
-    <div className="card">
-      <b>{nombre}</b>
-      <p>Número de tarjeta:</p>
-      <b>{parseCardNumber(numeroTarjeta)}</b>
-      <p>Saldo:</p>
-      <b>{numberToCOP(saldo) || saldo}</b>
-      <button className="btn btn-light" onClick={handleConsultarSaldo}>
+    <div className="flex flex-col flex-wrap rounded-2xl m-4 py-10 px-8 bg-blue-ribbon-700 text-white">
+      <p className="text-xl font-bold">{nombre}</p>
+      <p className="mt-2">Número de tarjeta:</p>
+      <p className="text-xl font-bold">{parseCardNumber(numeroTarjeta)}</p>
+      <p className="mt-4">Saldo:</p>
+      <p className="text-2xl font-bold">{numberToCOP(saldo) || saldo}</p>
+      <button
+        className="text-blue-ribbon-700 bg-white p-3 m-2 rounded-2xl mt-4 font-bold"
+        onClick={handleConsultarSaldo}
+      >
         Actualizar saldo
       </button>
     </div>
