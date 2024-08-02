@@ -2,6 +2,8 @@
 import "./Card.css";
 import { useState } from "react";
 import { obtenerSaldo } from "@/services/api";
+import { parseCardNumber } from "@/utils/parserCardNumber";
+import { numberToCOP } from "@/utils/numberFormats";
 
 export default function Card({ card }) {
   const [nombre, setNombre] = useState(card.name);
@@ -19,16 +21,12 @@ export default function Card({ card }) {
 
   return (
     <div className="card">
-      <p>
-        <b>Nombre:</b> {nombre}
-      </p>
-      <p>
-        <b>Número de tarjeta:</b> {numeroTarjeta}
-      </p>
-      <p>
-        <b>Saldo:</b> {saldo}
-      </p>
-      <button className="btn btn-primary" onClick={handleConsultarSaldo}>
+      <b>{nombre}</b>
+      <p>Número de tarjeta:</p>
+      <b>{parseCardNumber(numeroTarjeta)}</b>
+      <p>Saldo:</p>
+      <b>{numberToCOP(saldo) || saldo}</b>
+      <button className="btn btn-light" onClick={handleConsultarSaldo}>
         Actualizar saldo
       </button>
     </div>
