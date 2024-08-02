@@ -1,30 +1,32 @@
 "use client";
 import Card from "@/app/components/Card";
+import { isValidNumber } from "@/utils/parserCardNumber";
 import { guardarEnLocalStorage } from "@/utils/localStorageUtils";
 import { parseCardNumber } from "@/utils/parserCardNumber";
 
 export default function CardDeck({ cardsState }) {
   const [cards, setCards] = cardsState;
 
-  // const handleRegistrar = async () => {
-  //   if (!isValidNumber(numeroTarjeta)) {
-  //     alert("El número de tarjeta no es válido");
-  //     return;
-  //   }
-  //   if (cards.find((card) => card.number === numeroTarjeta)) {
-  //     alert("La tarjeta ya está registrada");
-  //     return;
-  //   }
-  //   setCards([
-  //     ...cards,
-  //     {
-  //       name: parseCardNumber(numeroTarjeta),
-  //       number: numeroTarjeta,
-  //       balance: "-",
-  //     },
-  //   ]);
-  //   setNumeroTarjeta("");
-  // };
+  const handleAgregar = async () => {
+    const numeroTarjeta = prompt("Ingresa el número de la tarjeta");
+
+    if (!isValidNumber(numeroTarjeta)) {
+      alert("El número de tarjeta no es válido");
+      return;
+    }
+    if (cards.find((card) => card.number === numeroTarjeta)) {
+      alert("La tarjeta ya está registrada");
+      return;
+    }
+    setCards([
+      ...cards,
+      {
+        name: parseCardNumber(numeroTarjeta),
+        number: numeroTarjeta,
+        balance: "-",
+      },
+    ]);
+  };
 
   const handleClean = () => {
     if (confirm("¿Estás seguro de que quieres eliminar todas las tarjetas?")) {
@@ -35,9 +37,15 @@ export default function CardDeck({ cardsState }) {
 
   return (
     <div className="div-cards">
-      <h1 className="flex-col justify-center align-center color-primary">
-        Tarjetas
-      </h1>
+      <div className="flex-row justify-between align-center">
+        <h1 className="flex-col justify-center align-center color-primary">
+          Tarjetas
+        </h1>
+        <button className="btn btn-primary" onClick={handleAgregar}>
+          +
+        </button>
+      </div>
+
       {/* <button className="btn btn-primary" onClick={handleRegistrar}>
         Guardar tarjeta
       </button> */}
