@@ -1,13 +1,61 @@
-.div-balance-items {
-  width: 100%;
+@media (max-width: 720px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .div-balance-search {
+    width: 100%;
+  }
+}
+
+@media (min-width: 720px) {
+  .main-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.div-balance-search {
+  width: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.input-tarjeta {
+  flex: 1;
+  border: solid 1rem black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: none;
+}
+
+.button-search {
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.icon-search {
+  margin: 0.5rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
 .div-cards {
   width: 100%;
+  height: 100%;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: #d6f1ff;
 }

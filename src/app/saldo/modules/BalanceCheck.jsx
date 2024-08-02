@@ -1,10 +1,9 @@
 "use client";
 import { useState } from "react";
 import { obtenerSaldo } from "@/services/api";
-import { parseCardNumber, isValidNumber } from "@/utils/parserCardNumber";
+import { isValidNumber } from "@/utils/parserCardNumber";
 
-export default function BalanceCheck({ cardsState }) {
-  const [cards, setCards] = cardsState;
+export default function BalanceCheck() {
   const [numeroTarjeta, setNumeroTarjeta] = useState("");
   const [info, setInfo] = useState("");
 
@@ -22,33 +21,13 @@ export default function BalanceCheck({ cardsState }) {
     }
   };
 
-  const handleRegistrar = async () => {
-    if (!isValidNumber(numeroTarjeta)) {
-      alert("El número de tarjeta no es válido");
-      return;
-    }
-    if (cards.find((card) => card.number === numeroTarjeta)) {
-      alert("La tarjeta ya está registrada");
-      return;
-    }
-    setCards([
-      ...cards,
-      {
-        name: parseCardNumber(numeroTarjeta),
-        number: numeroTarjeta,
-        balance: "-",
-      },
-    ]);
-    setNumeroTarjeta("");
-  };
-
   return (
     <div className="flex-col justify-center align-center div-balance-search">
       <h1 className="color-primary">Consulta de Saldo</h1>
       <p className="align-center">
         <b>NOTA:</b> Escribe el número de tarjeta sin espacios ni guiones.
       </p>
-      <div>
+      <div className="flex-row justify-center align-center">
         <input
           className="input-tarjeta"
           type="text"
@@ -56,16 +35,22 @@ export default function BalanceCheck({ cardsState }) {
           onChange={(e) => setNumeroTarjeta(e.target.value)}
           placeholder="Número de tarjeta"
         />
-        <div className="div-balance-items">
-          <button className="btn btn-primary" onClick={handleConsultarSaldo}>
-            Consultar saldo
-          </button>
-          <button className="btn btn-primary" onClick={handleRegistrar}>
-            Guardar tarjeta
-          </button>
-        </div>
+        <button
+          className="btn btn-primary button-search"
+          onClick={handleConsultarSaldo}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/icons/search-white.png"
+            className="icon-search"
+            alt="search"
+          />
+        </button>
       </div>
-      <p>Saldo: {info}</p>
+
+      <p>
+        Saldo: <b>{info}</b>
+      </p>
     </div>
   );
 }

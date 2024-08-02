@@ -35,8 +35,8 @@ export default function Home() {
   }, [cards]);
 
   return (
-    <main>
-      <BalanceCheck cardsState={[cards, setCards]} />
+    <main className="main-content">
+      <BalanceCheck />
       <CardDeck cardsState={[cards, setCards]} />
     </main>
   );
