@@ -1,7 +1,11 @@
 "use client";
 import { useState } from "react";
 import { obtenerSaldo } from "@/services/api";
-import { isValidNumber } from "@/utils/parserCardNumber";
+import {
+  isValidNumber,
+  isParsedNumber,
+  unparseCardNumber,
+} from "@/utils/parserCardNumber";
 import { numberToCOP } from "@/utils/numberFormats";
 
 export default function BalanceCheck() {
@@ -9,13 +13,17 @@ export default function BalanceCheck() {
   const [info, setInfo] = useState("");
 
   const handleConsultarSaldo = async () => {
-    if (!isValidNumber(numeroTarjeta)) {
+    let cardNumber = numeroTarjeta;
+    if (isParsedNumber(numeroTarjeta)) {
+      cardNumber = unparseCardNumber(numeroTarjeta);
+    }
+    if (!isValidNumber(cardNumber)) {
       alert("El número de tarjeta no es válido");
       setNumeroTarjeta("");
       return;
     }
     try {
-      const data = await obtenerSaldo(numeroTarjeta);
+      const data = await obtenerSaldo(cardNumber);
       setInfo(data.balance || "Saldo no disponible");
     } catch (e) {
       setInfo("Error al obtener el saldo");
