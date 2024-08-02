@@ -1,6 +1,10 @@
 "use client";
 import Card from "@/app/components/Card";
-import { isValidNumber } from "@/utils/parserCardNumber";
+import {
+  isValidNumber,
+  isParsedNumber,
+  unparseCardNumber,
+} from "@/utils/parserCardNumber";
 import { guardarEnLocalStorage } from "@/utils/localStorageUtils";
 import { parseCardNumber } from "@/utils/parserCardNumber";
 
@@ -8,16 +12,22 @@ export default function CardDeck({ cardsState }) {
   const [cards, setCards] = cardsState;
 
   const handleAgregar = async () => {
-    const numeroTarjeta = prompt("Ingresa el número de la tarjeta");
+    let numeroTarjeta = prompt("Ingresa el número de la tarjeta");
+
+    if (isParsedNumber(numeroTarjeta)) {
+      numeroTarjeta = unparseCardNumber(numeroTarjeta);
+    }
 
     if (!isValidNumber(numeroTarjeta)) {
       alert("El número de tarjeta no es válido");
       return;
     }
+
     if (cards.find((card) => card.number === numeroTarjeta)) {
       alert("La tarjeta ya está registrada");
       return;
     }
+
     setCards([
       ...cards,
       {
