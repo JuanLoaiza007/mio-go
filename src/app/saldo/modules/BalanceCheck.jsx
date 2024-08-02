@@ -36,8 +36,10 @@ export default function BalanceCheck() {
         Consulta de Saldo
       </h1>
       <p className="w-full m-2">
-        <b>NOTA:</b> Escribe el número de tarjeta sin espacios ni guiones.
+        Consulte el saldo de su tarjeta MIO, para continuar digite el número
+        siguiendo el formato:
       </p>
+      <b className="text-2xl">xx.xx-xxxxxxxx-x</b>
       <div className="flex w-full flex-row justify-center items-center m-4 px-4">
         <input
           className="w-full rounded-xl p-3"
