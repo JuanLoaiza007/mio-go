@@ -56,7 +56,7 @@ export default function CardDeck({ cardsState }) {
           +
         </button>
       </div>
-      <div className="grid grid-rows-1 xl:grid-cols-2 2xl:grid-cols-3">
+      <div className="grid grid-rows-1 xl:grid-cols-2 3xl:grid-cols-3">
         {cards.map((card) => (
           <Card key={card.number} card={card} cardsState={cardsState} />
         ))}

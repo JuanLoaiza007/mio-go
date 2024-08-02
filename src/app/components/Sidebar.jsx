@@ -1,5 +1,4 @@
 "use client";
-import "./Sidebar.css";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { NavbarState } from "@/states/NavbarState";
@@ -10,21 +9,26 @@ export default function Sidebar() {
   const navbarState = NavbarState();
   const pathname = usePathname();
 
+  const isActive = "font-bold bg-white text-blue-ribbon-800 cursor-default";
+  const isUnactive = "bg-red text-white md:hover:bg-blue-ribbon-600";
+
   return (
-    <>
-      {navbarState.isMenuOpen && (
-        <div className="sidebar">
-          {pages.map(([name, href]) => (
-            <Link
-              key={name}
-              href={href}
-              className={pathname === href ? "link-active" : "link-unactive"}
-            >
-              {capitalizeFirstLetter(name)}
-            </Link>
-          ))}
-        </div>
-      )}
-    </>
+    <div
+      className={`bg-blue-ribbon-800 text-white p-4 flex flex-col md:h-full items-center ${
+        navbarState.isMenuOpen ? "" : "hidden"
+      }`}
+    >
+      {pages.map(([name, href]) => (
+        <Link
+          key={name}
+          href={href}
+          className={`p-4 w-full rounded-xl hover:ease-in-out hover:duration-100 ${
+            pathname === href ? isActive : isUnactive
+          }`}
+        >
+          {capitalizeFirstLetter(name)}
+        </Link>
+      ))}
+    </div>
   );
 }
