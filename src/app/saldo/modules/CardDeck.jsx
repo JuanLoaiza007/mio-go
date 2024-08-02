@@ -45,13 +45,11 @@ export default function CardDeck({ cardsState }) {
           +
         </button>
       </div>
-
-      {/* <button className="btn btn-primary" onClick={handleRegistrar}>
-        Guardar tarjeta
-      </button> */}
-      {cards.map((card) => (
-        <Card key={parseCardNumber(card.number)} card={card} />
-      ))}
+      <div className="cards-container">
+        {cards.map((card) => (
+          <Card key={parseCardNumber(card.number)} card={card} />
+        ))}
+      </div>
       {cards.length > 0 && (
         <button className="btn btn-danger" onClick={handleClean}>
           Eliminar todas las tarjetas
