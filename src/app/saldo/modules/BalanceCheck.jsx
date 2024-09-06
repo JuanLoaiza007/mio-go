@@ -12,11 +12,32 @@ export default function BalanceCheck() {
   const [numeroTarjeta, setNumeroTarjeta] = useState("");
   const [info, setInfo] = useState("");
 
-  const handleConsultarSaldo = async () => {
-    let cardNumber = numeroTarjeta;
-    if (isParsedNumber(numeroTarjeta)) {
-      cardNumber = unparseCardNumber(numeroTarjeta);
+  const formatearNumeroTarjeta = (valor) => {
+    let soloNumeros = valor.replace(/\D/g, ""); // Eliminar cualquier carácter que no sea un número
+
+    if (soloNumeros.length > 2) {
+      soloNumeros = soloNumeros.replace(/^(\d{2})(\d)/, "$1.$2");
     }
+    if (soloNumeros.length > 5) {
+      soloNumeros = soloNumeros.replace(/^(\d{2})\.(\d{2})(\d)/, "$1.$2-$3");
+    }
+    if (soloNumeros.length > 14) {
+      soloNumeros = soloNumeros.replace(
+        /^(\d{2})\.(\d{2})-(\d{8})(\d)/,
+        "$1.$2-$3-$4"
+      );
+    }
+
+    return soloNumeros;
+  };
+
+  const handleInputChange = (e) => {
+    const valorFormateado = formatearNumeroTarjeta(e.target.value);
+    setNumeroTarjeta(valorFormateado);
+  };
+
+  const handleConsultarSaldo = async () => {
+    let cardNumber = numeroTarjeta.replace(/\D/g, "");
     if (!isValidNumber(cardNumber)) {
       alert("El número de tarjeta no es válido");
       setNumeroTarjeta("");
@@ -45,8 +66,9 @@ export default function BalanceCheck() {
           className="w-full rounded-xl p-3"
           type="text"
           value={numeroTarjeta}
-          onChange={(e) => setNumeroTarjeta(e.target.value)}
+          onChange={handleInputChange}
           placeholder="Número de tarjeta"
+          maxLength={16}
         />
         <button
           className="text-white bg-blue-ribbon-700 p-3 m-2 rounded-2xl"
