@@ -24,10 +24,10 @@ export default function Navbar() {
             alt="menu"
           />
         </button>
-        <h1 className="mx-2 pt-1 font-bold text-2xl">{appState.appName}</h1>
+        <h1 className="mx-2 font-bold text-2xl">{appState.appName}</h1>
       </div>
       <div className="mx-2 p-2 font-bold bg-white text-blue-ribbon-600 text-xs rounded-xl">
-        <p className="pt-1">v{appState.version}</p>
+        <p>v{appState.version}</p>
       </div>
     </nav>
   );
