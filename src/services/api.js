@@ -6,11 +6,7 @@ const api = axios.create({
 
 export const obtenerSaldo = async (numeroTarjeta) => {
   try {
-    const cardDigits = numeroTarjeta.substring(4, 12);
-    const cardType = numeroTarjeta.substring(3, 4);
-    const response = await api.get(
-      `cliete.php?card=${cardDigits}&type=${cardType}`
-    );
+    const response = await api.get(`saldo.php?card=${numeroTarjeta}`);
     return response.data;
   } catch (error) {
     console.error("Error al obtener el saldo:", error);

@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body,
 #root {
@@ -5,62 +9,4 @@ body,
   height: 100%;
   margin: 0px;
   padding: 0px;
-}
-
-body {
-  background-color: #f5f5f5;
-}
-
-main {
-  padding: 1rem;
-  margin: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (min-width: 1024px) {
-  main {
-    justify-content: flex-start;
-  }
-}
-
-.color-primary {
-  color: #0070f3;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.align-center {
-  align-items: center;
-  text-align: center;
-}
-
-.input-tarjeta {
-  border: solid 1rem black;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  border: none;
-}
-
-.btn {
-  padding: 0.5rem 1rem;
-  margin: 0.5rem;
-  border-radius: 0.5rem;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.btn-primary {
-  background-color: #0070f3;
-}
-
-.btn-danger {
-  background-color: #dc3545;
 }
