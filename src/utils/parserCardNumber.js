@@ -18,3 +18,20 @@ export function unparseCardNumber(cardNumberFormatted) {
     .filter((char) => !charsToRemove.includes(char))
     .join("");
 }
+
+export function isParsedNumber(numberString) {
+  if (numberString.length !== 16) {
+    return false;
+  }
+  if (
+    numberString[2] !== "." ||
+    numberString[5] !== "-" ||
+    numberString[14] !== "-"
+  ) {
+    return false;
+  }
+  const numberStringWithoutDotsAndDashes = numberString
+    .replace(/\./g, "")
+    .replace(/-/g, "");
+  return isValidNumber(numberStringWithoutDotsAndDashes);
+}
