@@ -1,6 +1,10 @@
-## Descripción
+## > NOTA IMPORTANTE: Debido a cambios en los permisos de la API, ya no es posible que aplicaciones de terceros accedan a los datos de saldo de las tarjetas. El desarrollo de funcionalidades se suspende hasta nuevo aviso.
 
-Esta aplicación es un cliente NO oficial, gratuito y de código abierto diseñado proporcionar información y otras funcionalidades útiles relacionadas con el sistema integrado de transporte masivo MIO de Cali como consultar el saldo de la tarjeta de manera rápida y eficiente.
+# MioGO 
+
+![imagen](https://github.com/user-attachments/assets/32514273-6fde-4fd1-9c11-18175bf8e5f9)
+
+Esta aplicación es un cliente **NO oficial**, gratuito y de código abierto diseñado proporcionar información y otras funcionalidades útiles relacionadas con el sistema integrado de transporte masivo MIO de Cali como consultar el saldo de la tarjeta de manera rápida y eficiente.
 
 ## Advertencia
 
@@ -12,10 +16,12 @@ Las imágenes y otros contenidos relacionados con el sistema MIO pertenecen a su
 
 ## Características Principales
 
-- **Consulta de Saldo:** Permite a los usuarios verificar el saldo de sus tarjetas MIO de manera rápida.
-
-Más funciones en desarrollo...
+- **Consulta de Saldo:** Permite a los usuarios verificar el saldo de sus tarjetas MIO. **(inhabilitada por fuerzas mayores)**
+- **Guardar tarjetas:** Permite a los usuarios guardar múltiples tarjetas para poder consultarlas rápidamente.
 
 ## Uso
 
-Para utilizar la aplicación, accede al despliegue en la siguiente dirección: [https://mio-go.vercel.app/](https://mio-go.vercel.app/)
+Debido a cambios en los permisos de la API, las aplicaciones de terceros ya no pueden acceder a los datos de saldo de las tarjetas. Como resultado, la funcionalidad principal de esta aplicación ha quedado inhabilitada y su uso se limita ahora a fines conceptuales.
+
+El concepto de la aplicación sigue siendo accesible en el siguiente enlace: [https://mio-go.vercel.app/](https://mio-go.vercel.app/)
+
