@@ -1,6 +1,4 @@
-## > NOTA IMPORTANTE: Debido a cambios en los permisos de la API, ya no es posible que aplicaciones de terceros accedan a los datos de saldo de las tarjetas. El desarrollo de funcionalidades se suspende hasta nuevo aviso.
-
-# MioGO 
+# MioGO
 
 ![imagen](https://github.com/user-attachments/assets/32514273-6fde-4fd1-9c11-18175bf8e5f9)
 
@@ -16,12 +14,9 @@ Las imágenes y otros contenidos relacionados con el sistema MIO pertenecen a su
 
 ## Características Principales
 
-- **Consulta de Saldo:** Permite a los usuarios verificar el saldo de sus tarjetas MIO. **(inhabilitada por fuerzas mayores)**
+- **Consulta de Saldo:** Permite a los usuarios verificar el saldo de sus tarjetas MIO.
 - **Guardar tarjetas:** Permite a los usuarios guardar múltiples tarjetas para poder consultarlas rápidamente.
 
 ## Uso
 
-Debido a cambios en los permisos de la API, las aplicaciones de terceros ya no pueden acceder a los datos de saldo de las tarjetas. Como resultado, la funcionalidad principal de esta aplicación ha quedado inhabilitada y su uso se limita ahora a fines conceptuales.
-
-El concepto de la aplicación sigue siendo accesible en el siguiente enlace: [https://mio-go.vercel.app/](https://mio-go.vercel.app/)
-
+La aplicación es accesible a través del siguiente enlace: [https://mio-go.vercel.app/](https://mio-go.vercel.app/)
