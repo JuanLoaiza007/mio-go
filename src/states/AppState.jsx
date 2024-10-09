@@ -1,6 +1,6 @@
-import { create } from "zustand";
+import { create } from 'zustand'
 
 export const AppState = create((set) => ({
-  appName: "MIO Go",
-  version: "1.0.2",
-}));
+  appName: 'MIO Go',
+  version: '1.0.2'
+}))

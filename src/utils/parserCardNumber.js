@@ -1,21 +1,21 @@
-export function isValidNumber(numberString) {
+export function isValidNumber (numberString) {
   const regex = /^\d{13}$/
   return regex.test(numberString)
 }
 
-export function parseCardNumber(cardNumber) {
+export function parseCardNumber (cardNumber) {
   if (typeof cardNumber !== 'string' || cardNumber.length !== 13) {
     return null
   }
 
   const c = cardNumber.split('')
-  let cardNumberFormatted = `${c[0]}${c[1]}.${c[2]}${c[3]}-${c
+  const cardNumberFormatted = `${c[0]}${c[1]}.${c[2]}${c[3]}-${c
     .slice(4, 12)
     .join('')}-${c[12]}`
   return cardNumberFormatted
 }
 
-export function unparseCardNumber(cardNumberFormatted) {
+export function unparseCardNumber (cardNumberFormatted) {
   const charsToRemove = ['.', '-']
   return cardNumberFormatted
     .split('')
@@ -23,7 +23,7 @@ export function unparseCardNumber(cardNumberFormatted) {
     .join('')
 }
 
-export function isParsedNumber(numberString) {
+export function isParsedNumber (numberString) {
   if (typeof numberString !== 'string') return null
 
   if (numberString.length !== 16) {
