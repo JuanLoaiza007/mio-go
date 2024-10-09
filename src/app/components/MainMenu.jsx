@@ -1,24 +1,24 @@
-"use client";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { NavbarState } from "@/states/NavbarState";
-import { capitalizeFirstLetter } from "@/utils/capitalization";
+'use client'
+import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import { NavbarState } from '@/states/NavbarState'
+import { capitalizeFirstLetter } from '@/utils/capitalization'
 
-export default function MainMenu() {
+export default function MainMenu () {
   const pages = [
-    ["saldo", "/saldo"],
-    ["Sobre la app", "/sobre"],
-  ];
-  const navbarState = NavbarState();
-  const pathname = usePathname();
+    ['saldo', '/saldo'],
+    ['Sobre la app', '/sobre']
+  ]
+  const navbarState = NavbarState()
+  const pathname = usePathname()
 
-  const isActive = "font-bold bg-white text-blue-ribbon-800 cursor-default";
-  const isUnactive = "bg-red text-white md:hover:bg-blue-ribbon-600";
+  const isActive = 'font-bold bg-white text-blue-ribbon-800 cursor-default'
+  const isUnactive = 'bg-red text-white md:hover:bg-blue-ribbon-600'
 
   return (
     <div
       className={`bg-blue-ribbon-800 text-white p-4 flex flex-col md:h-full items-center ${
-        navbarState.isMenuOpen ? "" : "hidden"
+        navbarState.isMenuOpen ? '' : 'hidden'
       }`}
     >
       {pages.map(([name, href]) => (
@@ -33,5 +33,5 @@ export default function MainMenu() {
         </Link>
       ))}
     </div>
-  );
+  )
 }
