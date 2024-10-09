@@ -12,8 +12,21 @@ const config: Config = {
   testEnvironment: 'jsdom',
 
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  preset: 'ts-jest'
+  preset: 'ts-jest',
+
+  // Coverage config
+  collectCoverage: true,
+  coverageDirectory: 'coverage/jest/',
+  coverageReporters: ['text', 'lcov'],
+  collectCoverageFrom: [
+    'src/**/*.{js,jsx}', // Include all JS and JSX files
+    '!src/**/*.d.ts', // Ignore definition files
+    '!src/**/index.{js,jsx}', // Ignore index files
+    '!src/**/__test__/**', // Ignore tests
+    '!src/**/.*.test.{js,jsx}', // Ignore specific tests
+    '!src/public/**', // Ignore public directory
+    '!src/**/run-sonar.js' // Ignore sonar runner
+  ]
 }
 
-// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
 export default createJestConfig(config)
